@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Header from "../../../components/Header/Header";
 import SearchBox from "../../../components/SearchBox/SearchBox";
-const apiKey = 'AIzaSyAnyxFFuf-7YVSmLsPkKuvhednON5j9muI';
-
+import TitleTron from "../../TitleTron/TitleTron";
+import Results from "../../Results/Results";
 
 function Search() {
     return (
         <div>
             <Header />
+            <TitleTron />
             <SearchBox />
+            <Results />
         </div>
     )
 }
