@@ -9,24 +9,32 @@ function SearchBox() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        axios.get(url + Books + "&key=" + apiKey)
+        const axiosCall = axios.get(url + Books + "&key=" + apiKey)
             .then(res => {
                 console.log(res)
-                setBooks(res.data.items)
+                setBooks(res.data.items);
             })
             .catch(err => console.log(err));
     };
-
-return (
-    <div class="jumbotron" style={{ textAlign: 'center' }}>
-        <form onSubmit={handleSubmit} type="submit">
-            <input onChange={e => setBooks(e.target.value)} id="searchBox" placeholder="Search for a Book">
-            </input>
-            <button id="searchButton" type="submit">
-                Search
+    return (
+        <div class="jumbotron" style={{ textAlign: 'center' }}>
+            <form onSubmit={handleSubmit} type="submit">
+                <input onChange={e => setBooks(e.target.value)} id="searchBox" placeholder="Search for a Book">
+                </input>
+                <button id="searchButton" type="submit">
+                    Search
                 </button>
-        </form>
-    </div>
-)
+            </form>
+            <ul>
+                {Books.map(result => (
+                    <li>
+                        <div className="row">
+                            <div className="col-md-12">{result.data.items.volumeInfo.title}</div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 export default SearchBox;

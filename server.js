@@ -1,32 +1,23 @@
-const express = require('express');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const routes = require('./routes/api');
-const path = require('path');
 
-require('dotenv').config();
+const express = require("express");
 
+const mongoose = require("mongoose");
+const routes = require("./routes");
 const app = express();
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
-mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/booksDB", {
-        useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-    }
-  ).then(() => console.log('Database connected successfully')
-  ).catch(err => console.log(err));
-app.use(logger('dev'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use(bodyParser.json());
-app.use('/api', routes);
-app.use((err, req, res, next) => {
-    console.log(err);
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+app.use(routes);
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+
+
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-
-app.listen(port, () => { console.log('Server running on port ' + port) });
