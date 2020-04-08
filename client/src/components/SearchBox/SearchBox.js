@@ -4,12 +4,10 @@ const apiKey = 'AIzaSyAnyxFFuf-7YVSmLsPkKuvhednON5j9muI';
 const url = 'https://www.googleapis.com/books/v1/volumes?q='
 
 function SearchBox() {
-
-    const [Books, setBooks] = useState();
-
+    const [books, setBooks] = useState();
     const handleSubmit = e => {
         e.preventDefault();
-        const axiosCall = axios.get(url + Books + "&key=" + apiKey)
+        axios.get(url + books + "&key=" + apiKey)
             .then(res => {
                 console.log(res)
                 setBooks(res.data.items);
@@ -25,15 +23,6 @@ function SearchBox() {
                     Search
                 </button>
             </form>
-            <ul>
-                {Books.map(result => (
-                    <li>
-                        <div className="row">
-                            <div className="col-md-12">{result.data.items.volumeInfo.title}</div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
         </div>
     )
 }
