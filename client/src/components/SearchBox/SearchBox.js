@@ -1,28 +1,43 @@
 import React, { useState } from "react";
-import axios from "axios";
-const apiKey = 'AIzaSyAnyxFFuf-7YVSmLsPkKuvhednON5j9muI';
-const url = 'https://www.googleapis.com/books/v1/volumes?q='
+import API from "../utils/API";
 
 function SearchBox() {
     const [books, setBooks] = useState();
-    const handleSubmit = e => {
+
+    const handleFormSubmit = e => {
         e.preventDefault();
-        axios.get(url + books + "&key=" + apiKey)
+        API.getGoogleBook()
             .then(res => {
-                console.log(res)
                 setBooks(res.data.items);
+                console.log(res.data.items)
             })
             .catch(err => console.log(err));
     };
+
+    const handleResults = e =>{
+        e.preventDefault();
+        
+    }
+
     return (
-        <div class="jumbotron" style={{ textAlign: 'center' }}>
-            <form onSubmit={handleSubmit} type="submit">
-                <input onChange={e => setBooks(e.target.value)} id="searchBox" placeholder="Search for a Book">
-                </input>
-                <button id="searchButton" type="submit">
-                    Search
+        <div>
+            <div className="jumbotron" style={{ textAlign: 'center' }}>
+                <form onSubmit={handleFormSubmit} type="submit">
+                    <input onChange={e => setBooks(e.target.value)} id="searchBox" placeholder="Search for a Book">
+                    </input>
+                    <button id="searchButton" type="submit">
+                        Search
                 </button>
-            </form>
+                </form>
+            </div>
+            <div className="jumbotron">
+                <h5  style={{ textAlign: 'left' }}>
+                    Results
+                </h5>
+                <h2>
+
+                </h2>
+            </div>
         </div>
     )
 }
