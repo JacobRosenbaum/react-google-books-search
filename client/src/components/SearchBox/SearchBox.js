@@ -14,10 +14,18 @@ function SearchBox() {
             .catch(err => console.log(err));
     };
 
-    const handleResults = e =>{
-        e.preventDefault();
-        
-    }
+    function handleBookSave ({id, title, author, description, link, image}) {
+        console.log(id, title, author, description, link, image)
+    
+        API.saveBook({
+          title: title,
+          author: author,
+          description: description,
+          link: link,
+          image: image
+        })
+          .catch(err => console.log(err));
+      };
 
     return (
         <div>
@@ -29,14 +37,6 @@ function SearchBox() {
                         Search
                 </button>
                 </form>
-            </div>
-            <div className="jumbotron">
-                <h5  style={{ textAlign: 'left' }}>
-                    Results
-                </h5>
-                <h2>
-
-                </h2>
             </div>
         </div>
     )
