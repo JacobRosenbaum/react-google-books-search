@@ -21,7 +21,6 @@ function SearchBox() {
 
     function handleBookSave({ id, title, author, description, link, image }) {
         console.log(id, title, author, description, link, image)
-
         API.saveBook({
             title: title,
             author: author,
@@ -47,7 +46,7 @@ function SearchBox() {
                     {books ? (
                         <div>
                             {books.map(result =>
-                            <div>
+                            <div key={result.id}>
                                 <ResultTron
                                     key={result.id}
                                     title={result.volumeInfo.title}

@@ -1,8 +1,10 @@
 import React from "react";
 
-function ResultTron() {
+function ResultTron({ title, image }) {
     return (
         <li>
+            {image}
+            {title}
         </li>
     )
 }
