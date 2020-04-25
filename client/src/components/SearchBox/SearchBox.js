@@ -28,7 +28,9 @@ function SearchBox() {
             link: link,
             image: image,
             id: id
-        })
+        },
+        console.log("saved book motherfucker")
+        )
             .catch(err => console.log(err));
     };
 
@@ -46,28 +48,29 @@ function SearchBox() {
                     {books ? (
                         <div>
                             {books.map(result =>
-                            <div key={result.id}>
-                                <ResultTron
-                                    key={result.id}
-                                    title={result.volumeInfo.title}
-                                    author={result.volumeInfo.authors}
-                                    description={result.volumeInfo.description}
-                                    link={result.volumeInfo.previewLink}
-                                    image={result.volumeInfo.imageLinks ? (
-                                        <img src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
-                                    ) : (
-                                            <p>No Image</p>
-                                        )}
-                                />
-                                <SaveButton
-                                onClick={() => handleBookSave({id: result.id, title: result.volumeInfo.title, author: result.volumeInfo.authors[0], description: result.volumeInfo.description, link: result.volumeInfo.previewLink, image: result.volumeInfo.imageLinks.thumbnail
-                                })}
-                              />
-                              </div>
+                                <div key={result.id}>
+                                    <ResultTron
+                                        key={result.id}
+                                        title={result.volumeInfo.title}
+                                        author={result.volumeInfo.authors}
+                                        description={result.volumeInfo.description}
+                                        link={result.volumeInfo.previewLink}
+                                        image={result.volumeInfo.imageLinks ? (
+                                            <img src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
+                                        ) : (
+                                                <p>No Image</p>
+                                            )}
+                                    />
+                                    <SaveButton
+                                        onClick={() => handleBookSave({
+                                            id: result.id, title: result.volumeInfo.title, author: result.volumeInfo.authors[0], description: result.volumeInfo.description, link: result.volumeInfo.previewLink, image: result.volumeInfo.imageLinks.thumbnail
+                                        })}
+                                    />
+                                </div>
                             )
                             }
                         </div>
-                            )  : (
+                    ) : (
                             <h3>Results</h3>
                         )}
                 </ul>

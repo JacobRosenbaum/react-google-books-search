@@ -1,8 +1,9 @@
 import React from "react";
 
-function SaveButton() {
+function SaveButton(props) {
     return (
-        <button type="button" className="btn" style = {{float: 'right'}}>
+        <button type="button" {...props} className="btn" style = {{float: 'right', backgroundColor: 'green'}}>
+            Save Book
         </button>
     )
 }
