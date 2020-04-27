@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import API from "../utils/API";
 import SearchButton from "../SearchButton/SearchButton";
-import TitleTron from "../TitleTron/TitleTron";
 import SaveButton from "../SaveButton/Savebutton";
 import ResultTron from "../ResultTron/ResultTron";
+import "./searchbox.css"
 
 function SearchBox() {
     const [books, setBooks] = useState();
@@ -48,13 +48,13 @@ function SearchBox() {
                     {books ? (
                         <div>
                             {books.map(result =>
-                                <div key={result.id}>
+                                <li id = 'results' key={result.id}>
                                     <ResultTron
                                         key={result.id}
                                         title={result.volumeInfo.title}
-                                        author={result.volumeInfo.authors}
-                                        description={result.volumeInfo.description}
+                                        author={result.volumeInfo.authors[0]}
                                         link={result.volumeInfo.previewLink}
+                                        description={result.volumeInfo.description}
                                         image={result.volumeInfo.imageLinks ? (
                                             <img src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
                                         ) : (
@@ -66,7 +66,7 @@ function SearchBox() {
                                             id: result.id, title: result.volumeInfo.title, author: result.volumeInfo.authors[0], description: result.volumeInfo.description, link: result.volumeInfo.previewLink, image: result.volumeInfo.imageLinks.thumbnail
                                         })}
                                     />
-                                </div>
+                                </li>
                             )
                             }
                         </div>
