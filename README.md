@@ -4,4 +4,4 @@
 
 This application was built using the MERN FUll Stack with React.js. It's my first Full Stack app using React.js and I learned a lot about the process of building an interface. 
 
-*Please note that this application is not yet completed, check back soon to see the final product
+*Please note that this application is not yet completed, check back soon to see the final product*
