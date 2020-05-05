@@ -8,6 +8,6 @@ const BookSchema = new Schema({
   link: String
 })
 
-const Book = mongoose.model('books', BookSchema);
+const Book = mongoose.model('booksDB', BookSchema);
 
 module.exports = Book;

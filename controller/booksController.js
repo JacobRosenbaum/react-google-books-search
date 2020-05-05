@@ -19,6 +19,7 @@ module.exports = {
     db.Book
       .create(req.body)
       .then(dbModel => res.json(dbModel))
+      .then(console.log('posted from controller'))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {

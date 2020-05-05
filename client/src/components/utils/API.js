@@ -1,5 +1,4 @@
 import axios from "axios";
-const apiKey = 'AIzaSyAnyxFFuf-7YVSmLsPkKuvhednON5j9muI';
 
 export default {
   getGoogleBook: function(bookSearch) {
@@ -11,7 +10,8 @@ export default {
   },
   saveBook: function(bookInfo) {
     console.log(bookInfo)
-    return axios.post("/api/books", bookInfo);
+    return axios.post("/api/books", bookInfo)
+    .then(console.log('posted'));
   },
  
   deleteBook: function(id) {
