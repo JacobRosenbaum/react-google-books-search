@@ -29,7 +29,7 @@ function SearchBox() {
             image: image,
             id: id
         },
-        console.log("saved book motherfucker")
+        console.log("saved book from API")
         )
             .catch(err => console.log(err));
     };
@@ -71,7 +71,7 @@ function SearchBox() {
                             }
                         </div>
                     ) : (
-                            <h3>Results</h3>
+                            <h3></h3>
                         )}
                 </ul>
             </div>
