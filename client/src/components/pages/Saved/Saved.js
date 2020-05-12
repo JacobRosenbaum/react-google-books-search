@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../../../components/Header/Header";
-import SearchBox from "../../../components/SearchBox/SearchBox";
+import SaveBox from "../SaveBox/SaveBox";
 import TitleTron from "../../TitleTron/TitleTron";
 
 function Search() {
@@ -8,6 +8,7 @@ function Search() {
         <div>
             <Header />
             <TitleTron />
+            <SaveBox />
         </div>
     )
 }
