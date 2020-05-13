@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import ResultTron from "../../ResultTron/ResultTron"
 
@@ -6,8 +6,11 @@ import ResultTron from "../../ResultTron/ResultTron"
 function SearchBox() {
     const [apiBook, setapiBook] = useState("");
 
-    const handeleAPILoad = e => {
-        e.preventDefault();
+    useEffect(() => {
+        loadBooks()
+      }, [])
+
+    function loadBooks() { 
         API.getBook(apiBook)
             .then(res => {
                 setapiBook(res.data.items);
@@ -15,25 +18,25 @@ function SearchBox() {
             })
             .catch(err => console.log(err));
     };
-
-    function getAPIBook({ id, title, author, description, link, image }) {
-        console.log(id, title, author, description, link, image)
-        API.getBook({
-            title: title,
-            author: author,
-            description: description,
-            link: link,
-            image: image,
-            id: id
-        },
-        console.log("retrieved book from API")
-        )
-            .catch(err => console.log(err));
-    };
+    // function handleBookSave({ id, title, author, description, link, image }) {
+    //     console.log(id, title, author, description, link, image)
+    //     API.saveBook({
+    //         title: title,
+    //         author: author,
+    //         description: description,
+    //         link: link,
+    //         image: image,
+    //         id: id
+    //     },
+    //     console.log("saved book from API")
+    //     )
+    //     .then(res => loadBooks())
+    //         .catch(err => console.log(err));
+    // };
 
     return (
         <div>
-        <div className="jumbotron" onLoad = {{handeleAPILoad}}>
+        <div className="jumbotron">
             <ul>
                 {apiBook ? (
                     <div>
