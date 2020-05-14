@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import API from "../utils/API";
 import SearchButton from "../SearchButton/SearchButton";
-import SaveButton from "../SaveButton/Savebutton";
+import SaveButton from "../SaveButton/SaveButton";
 import ResultTron from "../ResultTron/ResultTron";
 import "./searchbox.css"
 

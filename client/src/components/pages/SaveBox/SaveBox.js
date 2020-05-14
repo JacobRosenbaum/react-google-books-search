@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import ResultTron from "../../ResultTron/ResultTron"
+import ResultTron from "../../ResultTron/ResultTron";
+import DeleteButton from "../../DeleteButton/DeleteButton"
 
 
-function SearchBox() {
+function SaveBox() {
     const [apiBook, setapiBook] = useState("");
 
     useEffect(() => {
@@ -18,21 +19,12 @@ function SearchBox() {
             })
             .catch(err => console.log(err));
     };
-    // function handleBookSave({ id, title, author, description, link, image }) {
-    //     console.log(id, title, author, description, link, image)
-    //     API.saveBook({
-    //         title: title,
-    //         author: author,
-    //         description: description,
-    //         link: link,
-    //         image: image,
-    //         id: id
-    //     },
-    //     console.log("saved book from API")
-    //     )
-    //     .then(res => loadBooks())
-    //         .catch(err => console.log(err));
-    // };
+
+    function deleteBook(id) {
+        API.deleteBook(id)
+          .then(res => loadBooks())
+          .catch(err => console.log(err));
+      }
 
     return (
         <div>
@@ -46,12 +38,14 @@ function SearchBox() {
                                     title={result.title}
                                     author={result.author}
                                     link={result.link}
-                                    description={result.link}
+                                    description={result.description}
                                     image={result.image ? (
                                         <img src={result.image} alt={result.title} />
                                     ) : (
                                             <p>No Image</p>
                                         )}
+                                />
+                                <DeleteButton onClick = {{deleteBook}}
                                 />
                             </li>
                         )
@@ -65,4 +59,4 @@ function SearchBox() {
     </div>
 )
 }
-export default SearchBox;
+export default SaveBox;
