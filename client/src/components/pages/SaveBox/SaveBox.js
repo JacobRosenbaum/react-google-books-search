@@ -13,8 +13,8 @@ function SearchBox() {
     function loadBooks() { 
         API.getBook(apiBook)
             .then(res => {
-                setapiBook(res.data.items);
-                console.log(res.data.items)
+                setapiBook(res.data);
+                console.log(res.data)
             })
             .catch(err => console.log(err));
     };
