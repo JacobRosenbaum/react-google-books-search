@@ -43,13 +43,12 @@ function SearchBox() {
                         {apiBook.map(result =>
                             <li id = 'results' key={result.id}>
                                 <ResultTron
-                                    key={result.id}
-                                    title={result.volumeInfo.title}
-                                    author={result.volumeInfo.authors[0]}
-                                    link={result.volumeInfo.previewLink}
-                                    description={result.volumeInfo.description}
-                                    image={result.volumeInfo.imageLinks ? (
-                                        <img src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
+                                    title={result.title}
+                                    author={result.author}
+                                    link={result.link}
+                                    description={result.link}
+                                    image={result.image ? (
+                                        <img src={result.image} alt={result.title} />
                                     ) : (
                                             <p>No Image</p>
                                         )}
