@@ -3,6 +3,7 @@ import API from "../utils/API";
 import SearchButton from "../SearchButton/SearchButton";
 import SaveButton from "../SaveButton/SaveButton";
 import ResultTron from "../ResultTron/ResultTron";
+import ViewButton from "../ViewButton/ViewButton"
 import "./searchbox.css"
 
 function SearchBox() {
@@ -36,24 +37,24 @@ function SearchBox() {
 
     return (
         <div>
-            <div className="jumbotron" style={{ textAlign: 'center' }}>
+            <div className="jumbotron" style={{ textAlign: 'center', backgroundColor: "white" }}>
                 <form onSubmit={handleFormSubmit} type="submit">
                     <input onChange={e => setBookSearch(e.target.value)} id="searchBox" placeholder="Search for a Book">
                     </input>
                     <SearchButton />
                 </form>
             </div>
-            <div className="jumbotron">
-                <ul>
+            <div className="jumbotron" style = {{backgroundColor: "white"}}>
+                <ul style = {{listStyleType: 'none'}}>
                     {books ? (
                         <div>
                             {books.map(result =>
-                                <li id = 'results' key={result.id}>
+                                <li id = 'results' key={result.id} >
                                     <ResultTron
                                         key={result.id}
                                         title={result.volumeInfo.title}
                                         author={result.volumeInfo.authors[0]}
-                                        link={result.volumeInfo.previewLink}
+                                        
                                         description={result.volumeInfo.description}
                                         image={result.volumeInfo.imageLinks ? (
                                             <img src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
@@ -61,7 +62,8 @@ function SearchBox() {
                                                 <p>No Image</p>
                                             )}
                                     />
-                                    <SaveButton
+                                    <ViewButton link={result.volumeInfo.previewLink}/>
+                                    <SaveButton 
                                         onClick={() => handleBookSave({
                                             id: result.id, title: result.volumeInfo.title, author: result.volumeInfo.authors[0], description: result.volumeInfo.description, link: result.volumeInfo.previewLink, image: result.volumeInfo.imageLinks.thumbnail
                                         })}

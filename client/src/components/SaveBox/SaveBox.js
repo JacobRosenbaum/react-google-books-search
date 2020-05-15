@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import API from "../../utils/API";
-import ResultTron from "../../ResultTron/ResultTron";
-import DeleteButton from "../../DeleteButton/DeleteButton"
+import API from "../utils/API";
+import ResultTron from "../ResultTron/ResultTron";
+import DeleteButton from "../DeleteButton/DeleteButton"
 
 
 function SaveBox() {
