@@ -52,7 +52,7 @@ function SearchBox() {
                                     <div className="card" style={{ border: 'none', marginTop: '40px' }}>
                                         <div className="row">
                                             <div className="col-md-6">
-                                                <b>{result.volumeInfo.title}</b>
+                                                <b> {result.volumeInfo.title}</b>
                                                 <br />
                                                 <div style = {{marginBottom: '15px'}}>written by {result.volumeInfo.authors[0]}</div>
                                             </div>
