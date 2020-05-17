@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import API from "../utils/API";
 import SearchButton from "../SearchButton/SearchButton";
 import ViewButton from "../ViewButton/ViewButton";
-import SaveButton from "../SaveButton/SaveButton"
+import SaveButton from "../../components/SaveButton/SaveButton"
 import "./searchbox.css"
 
 function SearchBox() {
