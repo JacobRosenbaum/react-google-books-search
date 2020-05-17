@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import API from "../utils/API";
 import SearchButton from "../SearchButton/SearchButton";
-import SaveButton from "../SaveButton/SaveButton";
-import ResultTron from "../ResultTron/ResultTron";
-import ViewButton from "../ViewButton/ViewButton"
+import ViewButton from "../ViewButton/ViewButton";
+import SaveButton from "../SaveButton/SaveButton"
 import "./searchbox.css"
 
 function SearchBox() {
