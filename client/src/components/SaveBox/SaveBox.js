@@ -42,9 +42,9 @@ function SaveBox() {
                                                 <div style={{ marginBottom: '15px' }}>written by {result.author}</div>
                                             </div>
                                             <DeleteButton
-                                                onClick={() => deleteBook()}
+                                                onClick={() => deleteBook(result._id)}
                                             />
-                                            <ViewButton link={result.previewLink} />
+                                            <ViewButton link={result.link} />
                                         </div>
                                     </div>
                                     <div className="row">
