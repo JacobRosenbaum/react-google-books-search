@@ -37,9 +37,9 @@ function SaveBox() {
                                     <div className="card" style={{ border: 'none', marginTop: '40px' }}>
                                         <div className="row">
                                             <div className="col-md-6">
-                                                <b>{title}</b>
+                                                <b>{result.title}</b>
                                                 <br />
-                                                <div style={{ marginBottom: '15px' }}>written by {author}</div>
+                                                <div style={{ marginBottom: '15px' }}>written by {result.author}</div>
                                             </div>
                                             <DeleteButton
                                                 onClick={() => deleteBook()}
@@ -48,12 +48,12 @@ function SaveBox() {
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-md-2">{image ? (
-                                            <img src={image} alt={title} />
+                                        <div className="col-md-2">{result.image ? (
+                                            <img src={result.image} alt={result.title} />
                                         ) : (
                                                 <p>No Image</p>
                                             )}</div>
-                                        <div className="col-md-10" style={{ height: "180px", overflowY: 'scroll', }}>{description}</div>
+                                        <div className="col-md-10" style={{ height: "180px", overflowY: 'scroll', }}>{result.description}</div>
                                     </div>
                             </li>
                         )

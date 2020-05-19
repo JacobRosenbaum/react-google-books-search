@@ -1,5 +1,5 @@
 import React from "react";
-import ViewButton from "../ViewButton/ViewButton"
+import ViewButton from "../ViewButton/ViewButton";
 
 function ResultTron({ title, author, description, image }) {
     return (
