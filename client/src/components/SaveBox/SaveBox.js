@@ -9,7 +9,7 @@ function SaveBox() {
 
     useEffect(() => {
         loadBooks()
-    }, [apiBook])
+    }, [])
 
     function loadBooks() {
         API.getBook(apiBook)
