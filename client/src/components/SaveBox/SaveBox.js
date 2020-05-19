@@ -9,7 +9,7 @@ function SaveBox() {
 
     useEffect(() => {
         loadBooks()
-    }, [])
+    }, [apiBook])
 
     function loadBooks() {
         API.getBook(apiBook)
@@ -62,7 +62,7 @@ function SaveBox() {
                             }
                         </div>
                     ) : (
-                            <h3> </h3>
+                            <h3> You haven't saved any books yet</h3>
                         )}
                 </ul>
             </div>
