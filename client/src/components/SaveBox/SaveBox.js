@@ -41,10 +41,12 @@ function SaveBox() {
                                                 <br />
                                                 <div style={{ marginBottom: '15px' }}>written by {result.author}</div>
                                             </div>
-                                            <DeleteButton
-                                                onClick={() => deleteBook(result._id)}
-                                            />
-                                            <ViewButton link={result.link} />
+                                            <div className="col-md-6">
+                                                <DeleteButton
+                                                    onClick={() => deleteBook(result._id)}
+                                                />
+                                                <ViewButton link={result.link} />
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -55,10 +57,10 @@ function SaveBox() {
                                             )}</div>
                                         <div className="col-md-10" style={{ height: "180px", overflowY: 'scroll', }}>{result.description}</div>
                                     </div>
-                            </li>
-                        )
-                        }
-                    </div>
+                                </li>
+                            )
+                            }
+                        </div>
                     ) : (
                             <h3> </h3>
                         )}
