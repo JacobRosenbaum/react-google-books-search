@@ -44,7 +44,7 @@ function SaveBox() {
                                             <DeleteButton
                                                 onClick={() => deleteBook()}
                                             />
-                                            <ViewButton link={result.volumeInfo.previewLink} />
+                                            <ViewButton link={result.previewLink} />
                                         </div>
                                     </div>
                                     <div className="row">
