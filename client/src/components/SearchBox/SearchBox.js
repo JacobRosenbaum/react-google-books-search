@@ -43,12 +43,12 @@ function SearchBox() {
                     <SearchButton />
                 </form>
             </div>
-            <div style={{ backgroundColor: "white" }}>
-                <ul style={{ listStyleType: 'none' }}>
+            <div id = 'container' style={{ backgroundColor: "white" }}>
+                <ul id='results' style={{ listStyleType: 'none' }}>
                     {books? (
                         <div>
                             {books.map(result =>
-                                <li id='results' key={result.id} >
+                                <li class = 'show' key={result.id} >
                                     <div className="card" style={{ border: 'none', marginTop: '40px' }}>
                                         <div className="row">
                                             <div className="col-md-6">
@@ -67,11 +67,11 @@ function SearchBox() {
                                         </div>
                                         <div className="row">
                                             <div className="col-md-2">{result.volumeInfo.imageLinks ? (
-                                                <img src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
+                                                <img style={{ height: "160px", width: '110px'}} src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
                                             ) : (
                                                     <p>No Image</p>
                                                 )}</div>
-                                            <div className="col-md-10" style={{ height: "180px", overflowY: 'scroll', }}>{result.volumeInfo.description}</div>
+                                            <div className="col-md-10" style={{ height: "160px", overflowY: 'scroll', }}>{result.volumeInfo.description}</div>
                                         </div>
                                     </div>
                                     {/* key={result.id}

@@ -5,7 +5,7 @@ import DeleteButton from "../DeleteButton/DeleteButton"
 
 
 function SaveBox() {
-    const [apiBook, setapiBook] = useState("");
+    const [apiBook, setapiBook] = useState([]);
 
     useEffect(() => {
         loadBooks()
@@ -62,7 +62,7 @@ function SaveBox() {
                             }
                         </div>
                     ) : (
-                            <h3> You haven't saved any books yet</h3>
+                            <h3 style = {{textAlign: 'center'}}> You haven't saved any books yet</h3>
                         )}
                 </ul>
             </div>
