@@ -30,7 +30,7 @@ function SaveBox() {
         <div>
             <div style={{ backgroundColor: "white" }}>
                 <ul style={{ listStyleType: 'none' }}>
-                    {apiBook ? (
+                    {apiBook.length ? (
                         <div>
                             {apiBook.map(result =>
                                 <li id='results' key={result.id} >

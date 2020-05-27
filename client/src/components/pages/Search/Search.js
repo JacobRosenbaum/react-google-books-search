@@ -6,13 +6,15 @@ import "./search.css"
 
 function Search() {
     return (
-        <div class = "searchContainer">
-            <div class="searchHeader">
-                <Header />
-            </div>
-            <div class="searchBody">
-                <TitleTron />
-                <SearchBox />
+        <div id='background'>
+            <div class="searchContainer">
+                <div class="searchHeader">
+                    <Header />
+                </div>
+                <div class="searchBody">
+                    {/* <TitleTron /> */}
+                    <SearchBox />
+                </div>
             </div>
         </div>
     )

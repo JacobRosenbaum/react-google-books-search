@@ -35,26 +35,40 @@ function SearchBox() {
     };
 
     return (
-        <div>
-            <div style={{ textAlign: 'center', backgroundColor: "white" }}>
-                <form onSubmit={handleFormSubmit} type="submit">
-                    <input onChange={e => setBookSearch(e.target.value)} id="searchBox" placeholder="Search for a Book">
-                    </input>
-                    <SearchButton />
-                </form>
+        <div style={{ backgroundColor: "white" }}>
+            <div class="jumbotron" style={{ textAlign: 'center', backgroundColor: "white" }}>
+                <h1>(React) Google Books Search
+           </h1>
+                <h3>
+                    Search for and Save Books of Interest
+           </h3>
+                <div style={{ textAlign: 'center', backgroundColor: "white", marginTop: '40px' }}>
+                    <form onSubmit={handleFormSubmit} type="submit">
+                        <input onChange={e => setBookSearch(e.target.value)} id="searchBox" placeholder="Search for a Book">
+                        </input>
+                        <SearchButton />
+                    </form>
+                </div>
             </div>
-            <div id = 'container' style={{ backgroundColor: "white" }}>
+            <div id='container' style={{ backgroundColor: "white" }}>
                 <ul id='results' style={{ listStyleType: 'none' }}>
-                    {books? (
+                    {books ? (
                         <div>
                             {books.map(result =>
-                                <li class = 'show' key={result.id} >
+                                <li data-aos="fade-up"
+                                    // data-aos-offset="200"
+                                    // data-aos-delay="50"
+                                    // data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out-back"
+                                    // data-aos-mirror="true"
+                                    data-aos-once="false"
+                                    data-aos-anchor-placement="center-bottom" class='show' key={result.id} >
                                     <div className="card" style={{ border: 'none', marginTop: '40px' }}>
                                         <div className="row">
                                             <div className="col-md-6">
                                                 <b> {result.volumeInfo.title}</b>
                                                 <br />
-                                                <div style = {{marginBottom: '15px'}}>written by {result.volumeInfo.authors[0]}</div>
+                                                <div style={{ marginBottom: '15px' }}>written by {result.volumeInfo.authors[0]}</div>
                                             </div>
                                             <div className="col-md-6">
                                                 <SaveButton
@@ -65,9 +79,9 @@ function SearchBox() {
                                                 <ViewButton link={result.volumeInfo.previewLink} />
                                             </div>
                                         </div>
-                                        <div className="row">
+                                        <div id="fadeDescription" className="row">
                                             <div className="col-md-2">{result.volumeInfo.imageLinks ? (
-                                                <img style={{ height: "160px", width: '110px'}} src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
+                                                <img style={{ height: "160px", width: '110px' }} src={result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title} />
                                             ) : (
                                                     <p>No Image</p>
                                                 )}</div>
