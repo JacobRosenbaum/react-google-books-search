@@ -6,7 +6,7 @@ const BookSchema = new Schema({
     required: true
   },
   author: {
-    type: String,
+    type: Array,
     required: true
   },
   description: String,
