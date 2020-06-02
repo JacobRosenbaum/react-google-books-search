@@ -6,7 +6,7 @@ import "./header.css"
 function Header() {
     return (
 <div class = "google">
-    <NavBar  collapseOnSelect expand="lg" bg="light" variant="light">
+    <NavBar style={{background: 'none', color:'white'}} fixed="top" collapseOnSelect expand="lg">
         <div className="navbar-brand" id = "google">
         Google Books
         </div > 

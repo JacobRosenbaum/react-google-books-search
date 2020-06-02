@@ -35,14 +35,14 @@ function SearchBox() {
     };
 
     return (
-        <div style={{ backgroundColor: "white" }}>
-            <div id = 'anchor' class="jumbotron" style={{ textAlign: 'center', backgroundColor: "white" }}>
+        <div class="saveHeader">
+            <div id='anchor' class="jumbotron" style={{ textAlign: 'center', background: 'none', marginTop: '50px' }}>
                 <h1>(React) Google Books Search
            </h1>
                 <h3>
                     Search for and Save Books of Interest
            </h3>
-                <div style={{ textAlign: 'center', backgroundColor: "white", marginTop: '40px' }}>
+                <div style={{ textAlign: 'center', marginTop: '40px' }}>
                     <form onSubmit={handleFormSubmit} type="submit">
                         <input onChange={e => setBookSearch(e.target.value)} id="searchBox" placeholder="Search for a Book">
                         </input>
@@ -50,10 +50,10 @@ function SearchBox() {
                     </form>
                 </div>
             </div>
-            <div id='container' style={{ backgroundColor: "white"  }}>
-                <ul id='results' style={{ listStyleType: 'none'}}>
+            <div id='container' style={{ background: 'none' }} >
+                <ul id='results' style={{ listStyleType: 'none', background: 'none' }}>
                     {books ? (
-                        <div>
+                        <div style={{ background: 'none' }}>
                             {books.map(result =>
                                 <li data-aos="fade-up"
                                     // data-aos-offset="200"
@@ -62,16 +62,16 @@ function SearchBox() {
                                     data-aos-easing="ease-in-out-back"
                                     // data-aos-mirror="true"
                                     data-aos-once="false"
-                                    // data-aos-anchor="#anchor"
+                                    data-aos-anchor="#anchor"
                                     data-aos-anchor-placement="center-bottom" class='show' key={result.id} >
-                                    <div className="card" style={{ border: 'none', marginTop: '40px' }}>
+                                    <div className="card" style={{ border: '2px solid black', marginTop: '40px', background: 'none' }}>
                                         <div className="row">
-                                            <div className="col-md-6">
+                                            <div id="titleAuthor" className="col-md-6">
                                                 <b> {result.volumeInfo.title}</b>
                                                 <br />
                                                 <div style={{ marginBottom: '15px' }}>written by {result.volumeInfo.authors[0]}</div>
                                             </div>
-                                            <div className="col-md-6">
+                                            <div id='button' className="col-md-6">
                                                 <SaveButton
                                                     onClick={() => handleBookSave({
                                                         id: result.id, title: result.volumeInfo.title, author: result.volumeInfo.authors[0], description: result.volumeInfo.description, link: result.volumeInfo.previewLink, image: result.volumeInfo.imageLinks.thumbnail
@@ -86,7 +86,7 @@ function SearchBox() {
                                             ) : (
                                                     <p>No Image</p>
                                                 )}</div>
-                                            <div className="col-md-10" style={{ height: "160px", overflowY: 'scroll', }}>{result.volumeInfo.description}</div>
+                                            <div id="description" className="col-md-10" style={{ height: "160px", overflowY: 'scroll', }}>{result.volumeInfo.description}</div>
                                         </div>
                                     </div>
                                     {/* key={result.id}
