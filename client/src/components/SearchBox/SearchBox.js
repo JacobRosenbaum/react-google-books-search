@@ -36,7 +36,7 @@ function SearchBox() {
 
     return (
         <div style={{ backgroundColor: "white" }}>
-            <div class="jumbotron" style={{ textAlign: 'center', backgroundColor: "white" }}>
+            <div id = 'anchor' class="jumbotron" style={{ textAlign: 'center', backgroundColor: "white" }}>
                 <h1>(React) Google Books Search
            </h1>
                 <h3>
@@ -50,8 +50,8 @@ function SearchBox() {
                     </form>
                 </div>
             </div>
-            <div id='container' style={{ backgroundColor: "white" }}>
-                <ul id='results' style={{ listStyleType: 'none' }}>
+            <div id='container' style={{ backgroundColor: "white"  }}>
+                <ul id='results' style={{ listStyleType: 'none'}}>
                     {books ? (
                         <div>
                             {books.map(result =>
@@ -62,6 +62,7 @@ function SearchBox() {
                                     data-aos-easing="ease-in-out-back"
                                     // data-aos-mirror="true"
                                     data-aos-once="false"
+                                    // data-aos-anchor="#anchor"
                                     data-aos-anchor-placement="center-bottom" class='show' key={result.id} >
                                     <div className="card" style={{ border: 'none', marginTop: '40px' }}>
                                         <div className="row">
