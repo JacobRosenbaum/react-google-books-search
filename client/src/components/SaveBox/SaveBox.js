@@ -12,7 +12,8 @@ function SaveBox() {
     }, [])
 
     function loadBooks() {
-        API.getBook(apiBook)
+        console.log(apiBook)
+        API.getBook([])
             .then(res => {
                 setapiBook(res.data);
                 console.log(res.data)
