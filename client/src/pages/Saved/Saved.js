@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import ViewButton from "../../ViewButton/ViewButton";
-import DeleteButton from "../../DeleteButton/DeleteButton";
-import Header from "../../Header/Header"
+import ViewButton from "../../components/ViewButton/ViewButton";
+import DeleteButton from "../../components/DeleteButton/DeleteButton";
+import Header from "../../components/Header/Header"
 import "./saved.css"
 
 function Search() {

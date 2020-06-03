@@ -72,6 +72,8 @@ h1 {
   }
   input.input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
-    opacity: 1; /* Firefox */
-  }
+    opacity: 1;  
+    vertical-align: middle
+  }/* Firefox */
+  
 
