@@ -72,7 +72,7 @@ function Search() {
                                         <div className="card" style={{ border: 'none', marginTop: '40px', background: 'none' }}>
                                             <div className="row">
                                                 <div id="titleAuthor" className="col-md-6">
-                                                    <b style={{fontSize: '21px'}}> {result.volumeInfo.title}</b>
+                                                    <b style={{fontSize: '20px'}}> {result.volumeInfo.title}</b>
                                                     <br />
                                                     <div style={{ marginBottom: '15px', fontSize: '17px' }}>written by {result.volumeInfo.authors[0]}</div>
                                                 </div>

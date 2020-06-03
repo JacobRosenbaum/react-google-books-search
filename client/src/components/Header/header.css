@@ -2,6 +2,9 @@
 .nav{
     font-family: 'Noto Sans JP', sans-serif !important;
 }
-.navbar-brand{
-    color: 'black' !important
+#underline:hover{
+    text-decoration: underline;
+}
+#underline2:hover{
+    text-decoration: underline
 }

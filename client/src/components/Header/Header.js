@@ -7,20 +7,18 @@ function Header() {
     return (
         <div class="google">
             <NavBar style={{ background: 'none' }} fixed="top" collapseOnSelect expand="lg">
-                <div className="navbar-brand" id="google">
-                    <Link  style={{color: 'white' }} to="/" className={window.location.pathname === "/"}>
+                <div style={{color: 'white'}} className="navbar-brand" id="google">
                         Google Books
-        </Link>
                 </div>
                 <NavBar.Toggle class="google" aria-controls="responsive-navbar-nav" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" />
                 <NavBar.Collapse className="collapse navbar-collapse" id="navbarNav">
                     <ul tyle={{color: 'white' }} className="navbar-nav">
-                        <li  className="nav-item">
+                        <li id="underline" className="nav-item">
                             <Link style={{color: 'white' }}  to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
                                 Search
                         </Link>
                         </li>
-                        <li className="nav-item">
+                        <li id = "underline2" className="nav-item">
                             <Link style={{color: 'white' }} to="/saved" className={window.location.pathname === "saved" ? "nav-link active" : "nav-link"}>
                                 Saved
                         </Link>
