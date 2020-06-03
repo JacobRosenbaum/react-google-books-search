@@ -52,14 +52,14 @@ function Search() {
                                         data-aos-once="false"
                                         // data-aos-anchor="#anchor"
                                         data-aos-anchor-placement="center-bottom" class='show' id='results' key={result.id} >
-                                        <div className="card" style={{ border: 'none', marginTop: '40px' }}>
+                                        <div className="card" style={{ border: 'none', marginTop: '40px', background: 'none' }}>
                                             <div className="row">
                                                 <div id="titleAuthor" className="col-md-6">
                                                     <b style={{fontSize: '20px'}}>{result.title}</b>
                                                     <br />
                                                     <div style={{ marginBottom: '15px', fontSize:"17px" }}>written by {result.author}</div>
                                                 </div>
-                                                <div className="col-md-6">
+                                                <div id='button'  className="col-md-6">
                                                     <DeleteButton
                                                         onClick={() => deleteBook(result._id)}
                                                     />
@@ -69,11 +69,11 @@ function Search() {
                                         </div>
                                         <div className="row">
                                             <div className="col-md-2">{result.image ? (
-                                                <img src={result.image} alt={result.title} />
+                                                <img style={{ height: "160px", width: '110px' }} src={result.image} alt={result.title} />
                                             ) : (
                                                     <p>No Image</p>
                                                 )}</div>
-                                            <div id="description" className="col-md-10" style={{ height: "180px", overflowY: 'scroll', fontSize: '16px' }}>{result.description}</div>
+                                            <div id="description" className="col-md-10" style={{ height: "160px", overflowY: 'scroll', fontSize: '16px' }}>{result.description}</div>
                                         </div>
                                     </li>
                                 )
