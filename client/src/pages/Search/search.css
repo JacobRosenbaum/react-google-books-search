@@ -1,79 +1,164 @@
-.searchBody{
-    margin: auto;
-    width: 50% 
-}
-h3{
-    font-family: 'Noto Sans JP', sans-serif;
-    color: white
-}
-#description{
-    font-family: 'Tajawal', sans-serif;
+.searchBody {
+  margin: auto;
+  width: 50%
 }
 
-#titleAuthor{
-    font-family: 'Tajawal', sans-serif;
+h3 {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: white
 }
 
-#button{
-    font-family: 'Noto Sans JP', sans-serif;
+#description {
+  font-family: 'Tajawal', sans-serif;
 }
-#return{
-    background:'none' !important
+
+#titleAuthor {
+  font-family: 'Tajawal', sans-serif;
+}
+
+#button {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+#return {
+  background: 'none' !important
 }
 
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
-h1 {
-    font-size: 40px;
-  }
-  
-  @keyframes typewriter {
-    0%, 100% {
-      width: 0;
-    }
-    20%, 80% {
-      width: 10.2em;
-    }
-  }
-  
-  @keyframes caret {
-    0%, 100% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-  
-  .text_1 {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter;
-    display: inline-block;
-    position: relative;
-    animation-duration: 10s;
-    animation-timing-function: steps(25, end);
-    animation-iteration-count: infinite;
-    font-family: 'Noto Sans JP', sans-serif;
-    
-  }
-  
-  
-  .text_1::after {
-    content: "|";
-    position: absolute;
-    right: 0;
-    animation: caret infinite;
-    animation-duration: 1s;
-    animation-timing-function: steps(1, end);
-  }
-  input.input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 1;  
-    vertical-align: middle
-  }/* Firefox */
-  
 
+h1 {
+  font-size: 40px;
+}
+
+@keyframes typewriter {
+
+  0%,
+  100% {
+    width: 0;
+  }
+
+  20%,
+  80% {
+    width: 10.2em;
+  }
+}
+
+@keyframes caret {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.text_1 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter;
+  display: inline-block;
+  position: relative;
+  animation-duration: 10s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+  font-family: 'Noto Sans JP', sans-serif;
+
+}
+
+
+.text_1::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+input.input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  vertical-align: middle
+}
+
+/* iPhone X Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .searchBody {
+    width: 100%
+  }
+
+  .text_1 {
+    display: none !important
+  }
+
+  #search {
+    display: none
+  }
+
+  #searchType {
+    display: inline-block !important;
+    font-size: 50px;
+    margin-top: 40px
+  }
+
+  .input {
+    width: 150px;
+    overflow-x: auto;
+  }
+
+  #description {
+    height: 113px !important;
+    position: relative;
+    left: 130px;
+    bottom: 160px;
+    font-size: 15px !important;
+    width: 210px
+  }
+
+  #title {
+    font-size: 17px !important
+  }
+
+  #author {
+    font-size: 15px !important
+  }
+
+  #button {
+    position: relative;
+    right: 30px;
+    bottom: 10px
+  }
+
+  img {
+    position: relative;
+    bottom: 50px
+  }
+  .card{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  #fadeDescription{
+    margin-bottom: 0px
+  }
+  /* .card:nth-child(n + 2){
+    position: relative;
+    bottom: 100px
+  } */
+
+
+
+
+  /* Portrait */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+  /* Landscape */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}
+}

@@ -1,10 +1,45 @@
-
-.nav{
+.nav {
     font-family: 'Noto Sans JP', sans-serif !important;
 }
-#underline:hover{
+
+#underline:hover {
     text-decoration: underline;
 }
-#underline2:hover{
+
+#underline2:hover {
     text-decoration: underline
+}
+
+/* iPhone X Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    /* #hide {
+        color: white !important;
+        animation: typewriter;
+        display: inline-block !important;
+        animation-duration: 8s;
+        animation-timing-function: steps(10, end);
+        animation-iteration-count: infinite;
+
+    }
+
+    #hide::after {
+        content: "|";
+        position: absolute;
+        right: 0;
+        animation: caret infinite;
+        animation-duration: 1s;
+        animation-timing-function: steps(1, end);
+    } */
+#google{
+    font-size: 30px
+}
+.nav-link {
+    display: inline-block;
+    padding: 3px !important
+}
+    /* Portrait */
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+    /* Landscape */
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}
 }

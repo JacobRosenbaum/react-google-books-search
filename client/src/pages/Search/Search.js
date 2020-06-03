@@ -45,8 +45,9 @@ function Search() {
             <div style={{ zIndex: '-1' }} class='searchBody'>
                 <div class="jumbotron" style={{ textAlign: 'center', background: 'none', marginTop: '50px', color: 'white' }}>
                     <h1> <span class="text_1"> Google Books Search </span>
+                    <span style={{display:'none'}} id = "searchType"> Search </span>
                     </h1>
-                    <h3>
+                    <h3 id = "search">
                         Search for and Save Books of Interest
            </h3>
                     <div style={{ textAlign: 'center', marginTop: '40px' }}>
@@ -70,13 +71,13 @@ function Search() {
                                         // data-aos-mirror="true"
                                         data-aos-once="false"
                                         // data-aos-anchor="#anchor"
-                                        data-aos-anchor-placement="center-bottom" class='show' key={result.id} >
+                                        data-aos-anchor-placement="top-bottom" class='show' key={result.id} >
                                         <div className="card" style={{ border: 'none', marginTop: '40px', background: 'none' }}>
                                             <div className="row">
                                                 <div id="titleAuthor" className="col-md-6">
-                                                    <b style={{ fontSize: '20px' }}> {result.volumeInfo.title}</b>
+                                                    <b id="title" style={{ fontSize: '20px' }}> {result.volumeInfo.title}</b>
                                                     <br />
-                                                    <div style={{ marginBottom: '15px', fontSize: '17px' }}>written by {result.volumeInfo.authors[0]}</div>
+                                                    <div id='author' style={{ marginBottom: '15px', fontSize: '17px' }}>written by {result.volumeInfo.authors[0]}</div>
                                                 </div>
                                                 <div id='button' className="col-md-6">
                                                         <SaveButton

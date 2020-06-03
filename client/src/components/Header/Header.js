@@ -8,7 +8,7 @@ function Header() {
         <div class="google">
             <NavBar style={{ background: 'none' }} fixed="top" collapseOnSelect expand="lg">
                 <div style={{color: 'white'}} className="navbar-brand" id="google">
-                        Google Books
+                        Google Books <span className="navbar-brand" id = 'hide' style={{display: 'none'}}> Search</span>
                 </div>
                 <NavBar.Toggle class="google" aria-controls="responsive-navbar-nav" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" />
                 <NavBar.Collapse className="collapse navbar-collapse" id="navbarNav">
