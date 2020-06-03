@@ -5,29 +5,31 @@ import "./header.css"
 
 function Header() {
     return (
-<div class = "google">
-    <NavBar style={{background: 'none', color:'white'}} fixed="top" collapseOnSelect expand="lg">
-        <div className="navbar-brand" id = "google">
-        Google Books
-        </div > 
-        <NavBar.Toggle class = "google" aria-controls="responsive-navbar-nav" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"  />
-            <NavBar.Collapse className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-                        Search
-                        </Link>            
-                    </li>
-                    <li className="nav-item">
-                         <Link to="/saved" className={window.location.pathname === "saved" ? "nav-link active" : "nav-link"}>
-                        Saved
-                        </Link>  
-                    </li>
-                </ul>
-        </NavBar.Collapse>
-    </NavBar>
-</div>
- );
+        <div class="google">
+            <NavBar style={{ background: 'none' }} fixed="top" collapseOnSelect expand="lg">
+                <div className="navbar-brand" id="google">
+                    <Link  style={{color: 'white' }} to="/" className={window.location.pathname === "/"}>
+                        Google Books
+        </Link>
+                </div>
+                <NavBar.Toggle class="google" aria-controls="responsive-navbar-nav" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" />
+                <NavBar.Collapse className="collapse navbar-collapse" id="navbarNav">
+                    <ul tyle={{color: 'white' }} className="navbar-nav">
+                        <li  className="nav-item">
+                            <Link style={{color: 'white' }}  to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+                                Search
+                        </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link style={{color: 'white' }} to="/saved" className={window.location.pathname === "saved" ? "nav-link active" : "nav-link"}>
+                                Saved
+                        </Link>
+                        </li>
+                    </ul>
+                </NavBar.Collapse>
+            </NavBar>
+        </div>
+    );
 }
 
 export default Header;

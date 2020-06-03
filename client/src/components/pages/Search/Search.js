@@ -55,7 +55,7 @@ function Search() {
                         </form>
                     </div>
                 </div>
-                <div id='container' style={{ background: 'none' }} >
+                <div id='container' style={{ background: 'none', color: 'white' }} >
                     <ul id='results' style={{ listStyleType: 'none', background: 'none' }}>
                         {books ? (
                             <div style={{ background: 'none' }}>
@@ -72,9 +72,9 @@ function Search() {
                                         <div className="card" style={{ border: 'none', marginTop: '40px', background: 'none' }}>
                                             <div className="row">
                                                 <div id="titleAuthor" className="col-md-6">
-                                                    <b> {result.volumeInfo.title}</b>
+                                                    <b style={{fontSize: '21px'}}> {result.volumeInfo.title}</b>
                                                     <br />
-                                                    <div style={{ marginBottom: '15px' }}>written by {result.volumeInfo.authors[0]}</div>
+                                                    <div style={{ marginBottom: '15px', fontSize: '17px' }}>written by {result.volumeInfo.authors[0]}</div>
                                                 </div>
                                                 <div id='button' className="col-md-6">
                                                     <SaveButton
@@ -91,7 +91,7 @@ function Search() {
                                                 ) : (
                                                         <p>No Image</p>
                                                     )}</div>
-                                                <div id="description" className="col-md-10" style={{ height: "160px", overflowY: 'scroll', }}>{result.volumeInfo.description}</div>
+                                                <div id="description" className="col-md-10" style={{ height: "160px", overflowY: 'scroll', fontSize: '16px'}}>{result.volumeInfo.description}</div>
                                             </div>
                                         </div>
                                         {/* key={result.id}
